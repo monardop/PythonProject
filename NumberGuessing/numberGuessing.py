@@ -12,8 +12,11 @@ def evaluate(number: int) -> bool:
     elif 20 > abs(number - winner) > 5:
         print("Almost there")
         return False
-    else: 
+    elif  5 > abs(number - winner) > 2 : 
         print("Close enought")
+        return False
+    else:
+        print("Way too close")
         return False
 
 def valid_number() -> int:
