@@ -25,18 +25,39 @@ def valid_number() -> int:
         else:
             return x
 
-def game():
-    for turn in range(1, difficulty):
+def game(tries: int):
+    for turn in range(1, tries):
         print(f"Try number {turn}")
         if evaluate(valid_number()):
             break
     print(f"Game over! The number was {winner}")
 
+def set_difficulty() -> tuple:
+    difficulty = ((5, 10), (10,50), (5,50), (10,100), (5,100))
+    print("Select your level:")
+    print("0 - Very Easy (5 attempts, 1->10)")
+    print("1 - Easy (10 attempts, 1->50)")
+    print("2 - Medium(5 attempts, 1->50)")
+    print("3 - Hard(10 attempts, 1->100)")
+    print("4 - Very Hard(5 attempts, 1->100)")
+    
+    level = 0
+    while True:
+        try:
+            level = int(input("Choose: "))
+            if 0 > level > 4:
+                raise ValueError
+        except ValueError:
+            print("Wrong entry")
+        else:
+            break
+    return difficulty[level]
+
 play = True
 while play:
-    difficulty = 6
-    winner: int = randint(1,100)
-    game()
+    difficulty = set_difficulty()
+    winner: int = randint(1,difficulty[1])
+    game(difficulty[0])
     x = input("Enter 0 to end, else it will continue.")
     if x != 0:
         play = False
