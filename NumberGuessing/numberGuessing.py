@@ -32,7 +32,7 @@ def game(tries: int):
     for turn in range(1, tries):
         print(f"Try number {turn}")
         if evaluate(valid_number()):
-            break
+            return
     print(f"Game over! The number was {winner}")
 
 def set_difficulty() -> tuple:
