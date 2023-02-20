@@ -12,9 +12,6 @@ def divisibleSumPairs(n: int, k: int, ar: list) -> int:
     count = 0
     for i in range(n):
         for j in range(i + 1, n):
-            ar[i]
-            ar[j]
-            suma = ar[i] + ar[j]
             if (ar[i] + ar[j]) % k == 0:
                 count += 1
     return count
