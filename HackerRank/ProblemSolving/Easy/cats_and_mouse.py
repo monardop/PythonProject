@@ -1,9 +1,7 @@
 def catAndMouse(x, y, z):
-    diff1 = abs(z-x)
-    diff2 = abs(y-x)
-    if diff1 == diff2:
-        return "Mouse C"
-    elif diff1 > diff2:
-        return "Cat B"
+    if abs(x-z) == abs(y-z):
+        return 'Mouse C'
+    elif abs(x-z)<abs(y-z):
+        return 'Cat A'
     else:
-        return "Cat A"
+        return 'Cat B'
