@@ -16,7 +16,4 @@ def maxCost(cost: list, labels: list, dailyCount: int) -> int:
         return max(suma_diaria)
     except ValueError:
         return 0
-
-lista = []
-max(lista)
         
