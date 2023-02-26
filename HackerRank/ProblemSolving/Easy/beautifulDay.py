@@ -8,6 +8,14 @@
 #  3. INTEGER k
 #
 
-def beautifulDays(i, j, k):
+def beautifulDays(i: int, j: int, k: int) -> int:
     # Write your code here
-    pass
+    beautiful = 0
+    for day in range(i, j + 1):
+        inverse = str(day)
+        inverse = int(inverse[::-1])
+        if (day - inverse) % k == 0:
+            beautiful += 1
+    return beautiful
+
+print(beautifulDays(20,23,6))
