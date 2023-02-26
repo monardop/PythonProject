@@ -6,6 +6,15 @@
 #  2. INTEGER_ARRAY a
 #
 def angryProfessor(k: int, a: list[int]) -> str:
-    pass
+    count = 0
+    a.sort()
+    for student in a:
+        if student <= 0:
+            count += 1
+            if count == k:
+                return "NO"
+    return "YES"
+    
+        
     
 
