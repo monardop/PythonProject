@@ -8,8 +8,7 @@ for _ in range(n):
 
 for _ in range(n):
     try:
-        lookup = input()
-        print(lookup,"=",dictionary[lookup])2
-        
+        lookup:str = input()
+        print(lookup,"=",dictionary[lookup])
     except KeyError:
         print("Not found")
