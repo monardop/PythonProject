@@ -14,6 +14,10 @@ def to_binary(number: int) -> str:
 
 def max_num_consecurive(number: int) -> int:
     bin_number: str = to_binary(number)
+    if '0' not in bin_number:
+        return len(bin_number)
+    elif '1' not in bin_number:
+        return 0
     group = []
     count = 0
     for pos, bit in enumerate(bin_number):
@@ -24,6 +28,8 @@ def max_num_consecurive(number: int) -> int:
             count = 0
             if len(bin_number) - pos < max(group):
                 break  # To prevent unnecessary cycles
+    else:
+        group.append(count)
     return max(group)
 
-print(max_num_consecurive(200))
+print(max_num_consecurive(439))
