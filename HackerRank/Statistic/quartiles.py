@@ -12,6 +12,6 @@ def quartiles(arr) -> list[int]:
     q2, new_group = median(arr)
     q1, quartile_1_2 = median(new_group[0])
     q3, quartile_3_4 = median(new_group[1])
-    return [int(q1), int(q2), int(q3)]
-
-print(quartiles([9,5,7,1,3]))
+    return q1, q2, q3
+if __name__ == '__main__':
+    print(quartiles([9,5,7,1,3]))
