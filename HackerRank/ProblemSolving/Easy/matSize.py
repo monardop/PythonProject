@@ -7,7 +7,7 @@ One day, he designed a new door mat with the following specifications:
 * The design pattern should only use |, . and - characters.
 """
 n = int(input())
-m = int(input())
+m = n * 3
 
 # -----------------------
 
