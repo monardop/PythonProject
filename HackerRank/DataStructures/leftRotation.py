@@ -2,8 +2,8 @@
 #
 # The function is expected to return an INTEGER_ARRAY.
 # The function accepts following parameters:
-#  1. INTEGER d
-#  2. INTEGER_ARRAY arr
+#  1. INTEGER d: posiciones a la izquierda
+#  2. INTEGER_ARRAY arr lista a modificar
 #
 
 def rotateLeft(d: int, arr: list):
@@ -18,5 +18,14 @@ def rotateLeft(d: int, arr: list):
     
     return new_array
 
+# Alternativas:
+def rotateLeft(d, arr):
+    
+    while d > 0:
+        arr.append(arr.pop(0))
+        d -=1 
+   
+    return arr 
 
-
+def rotateLeft(d, arr):
+    return arr[d:]+arr[:d]
