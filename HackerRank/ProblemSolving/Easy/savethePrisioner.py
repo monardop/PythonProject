@@ -18,7 +18,7 @@ def saveThePrisoner(n: int, m: int, s: int) -> int:
 
     :return: chair number of prisioner to warn
     """
-    return (m - 1  + s - 1 ) % n + 1
+    return (m + s - 2 ) % n + 1
 
 print(saveThePrisoner(7, 19, 2)) # 6
 print(saveThePrisoner(3, 7, 3)) # 3
