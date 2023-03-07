@@ -10,3 +10,15 @@ The jailer is playing a little joke, though. The last piece of candy looks
 like all the others, but it tastes awful. Determine the chair number 
 occupied by the prisoner who will receive that candy.
 """
+def saveThePrisoner(n: int, m: int, s: int) -> int:
+    """
+    :param n: number of prisioners
+    :param m: number of sweets
+    :param s: the chair number to begin
+
+    :return: chair number of prisioner to warn
+    """
+    return (m - 1  + s - 1 ) % n + 1
+
+print(saveThePrisoner(7, 19, 2)) # 6
+print(saveThePrisoner(3, 7, 3)) # 3
